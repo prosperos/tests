@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /**
+     * Given two strings, first and second. Find all letters (ignoring case)
+     * which are present only in one string but not the other.
+     */
+    function getUniqueLetters(first, second) {
+        // Only change code below this line
+        let chars = {};
+
+        for (let i = 0; i < txt.length; ++i) {
+            let char = txt[i].toLowerCase();
+            if (char >= 'a' && char <= 'z') {
+                if (chars[char])
+                    ++chars[char]
+                else
+                    chars[char] = 1;
+            }
+        }
+
+        return chars;
+        // Only change code above this line
+    }
+
+
+    // Tests
+    test(getUniqueLetters('aBcdef', 'CdEfgh'), 'abgh');
+    test(getUniqueLetters('aAAaabBb', 'ab'), '');
+    test(getUniqueLetters('Happy New Year', 'nyh'), 'apewr');
+
+    function test(actual, expected, testName = '') {
+        if (actual !== expected) {
+            const errorMessage = `Test ${testName} failed: "${actual}" is not equal to expected "${expected}"`;
+            console.error(errorMessage);
+        } else {
+            console.log(`Test ${testName} passed!`);
+        }
+    }
+</script>
+</html>

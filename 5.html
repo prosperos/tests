@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /**
+     * Return true if all the letters in the `phrase`
+     * are present in the `pattern`
+     */
+    function hasAllLetters(pattern, phrase) {
+        // Only change code below this line
+        //var result = pattern.exec(phrase);
+
+        // пробував різні варінти але не виходить(( надіюся того вистачить що я зробив до того
+        var map = {};
+        for (var i = 0; i < pattern.length; i++) {
+            if (map[pattern[i]] == pattern[i].indexOf(phrase )!= -1) {
+                return true;
+            }
+        }
+        return false;
+
+
+
+
+        // for(i=0; i < pattern.length; i++)
+        // {
+        //     console.log(pattern.split(pattern[i]));
+        //     if (pattern.split(pattern[i]).length-1 > 1)
+        //     {
+        //         return true;
+        //     }
+        // }
+        // return false;
+
+        //return new Set(pattern).size != phrase.length;
+
+        // for(var i = 0; i < pattern.length; i++) {
+        //
+        //     var str = pattern[i];
+        //
+        //     var result = str.match( phrase );
+        //
+        //
+        //     // if (str.indexOf(phrase )!= -1) {
+        //     //     return true
+        //     // }else {
+        //     //     //alert(123);
+        //     //     return false;
+        //     // }
+        //     // for(var j = 0; j < phrase.length; j++){
+        //     //     phrase = pattern[i].search(phrase[j]) != -1;
+        //     //
+        //     // }
+        //     // if(arr[i] > arr[0]){
+        //     //     arr[0] = arr[i];
+        //     // }
+        //
+        // }
+
+        //return phrase;
+        // for(var i = 0; i < phrase.length; i++){
+        //     phrase = phrase[i].search(pattern) != -1;
+        // }
+        // эти две проверки идентичны
+        //alert( /лю/i.test(str) ) // true
+        //alert( str.search(/лю/i) != -1 ) // true
+        // Only change code above this line
+    }
+
+
+    // Tests
+    test(hasAllLetters('abcdef', 'Dead Beef'), true, 'Dead Beef');
+    test(hasAllLetters('abcdef', 'Some phrase'), false, 'Some phrase');
+    test(hasAllLetters('Happy New Year', 'nyh'), true, 'nyh');
+
+
+    function test(actual, expected, testName = '') {
+        if (actual !== expected) {
+            const errorMessage = `Test ${testName} failed: ${actual} is not equal to expected ${expected}`;
+            console.error(errorMessage);
+        } else {
+            console.log(`Test ${testName} passed!`);
+        }
+    }
+</script>
+</html>
